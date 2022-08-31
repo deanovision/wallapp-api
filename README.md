@@ -2,11 +2,11 @@
 
 ## Getting started
 
-### Start Dev Server
+Start Dev Server
 
 `npm run dev`
 
-### Run Tests
+Run Tests
 
 `npm run test`
 

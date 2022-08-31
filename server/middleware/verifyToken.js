@@ -16,6 +16,6 @@ async function verifyToken(req, res, next) {
       ? next()
       : res.status(401).json({ message: "token not valid" });
   } catch (err) {
-    res.status(500).json({ message: "internal server error" });
+    res.status(401).json({ message: "token not valid" });
   }
 }

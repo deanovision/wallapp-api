@@ -17,7 +17,6 @@ async function addPost(req, res, next) {
     const posts = await db.addPost(message);
     res.status(201).json(posts);
   } catch (err) {
-    console.log(err);
     res.status(500).json({ message: "internal server error" });
   }
 }

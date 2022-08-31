@@ -1,25 +1,30 @@
+const db = require("../models/postsModel");
+const verifyToken = require("../middleware/verifyToken");
+
 module.exports = (router) => {
-  router.post("/add-message", addMessage);
-  router.get("/get-messages", getMessages);
+  router.post("/add-post", verifyToken, addPost);
+  router.get("/get-posts", getPosts);
   return router;
 };
 
-async function addMessage(req, res, next) {
+async function addPost(req, res, next) {
   try {
     if (!req.body.message) {
       res.status(400).json({ message: "bad request, message required" });
       next();
     }
     const { message } = req.body;
-    res.status(201).json({ message: "success" });
+    const posts = await db.addPost(message);
+    res.status(201).json(posts);
   } catch (err) {
+    console.log(err);
     res.status(500).json({ message: "internal server error" });
   }
 }
-async function getMessages(req, res, next) {
+async function getPosts(req, res) {
   try {
-    //get messages from database
-    //return messages via response
+    const posts = await db.getPosts();
+    res.status(200).json(posts);
   } catch (err) {
     res.status(500).json({ message: "internal server error" });
   }

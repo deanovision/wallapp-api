@@ -5,7 +5,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable("posts", (table) => {
     table.increments("id");
-    table.string("message").notNullable();
+    table.text("message").notNullable();
     table.timestamps(true, true);
   });
 };

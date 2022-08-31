@@ -3,7 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable((table) => {
+  return knex.schema.createTable("posts", (table) => {
     table.increments("id");
     table.string("message").notNullable();
     table.timestamps(true, true);
@@ -14,4 +14,6 @@ exports.up = function (knex) {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.down = function (knex) {};
+exports.down = function (knex) {
+  return knex.schema.dropTableIfExists("posts");
+};

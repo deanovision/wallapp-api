@@ -16,13 +16,13 @@ Deploy an instance of Authorizer to Heroku [see docs](https://docs.authorizer.de
 
 ## Setup Sendgrid
 
-Firt you will need to [create a free account](https://signup.sendgrid.com/)
+First you will need to [create a free account](https://signup.sendgrid.com/)
 if you do not already have one. Next you will [create an api key](https://app.sendgrid.com/guide/integrate/langs/nodejs)
 after creating an api key you must [verify sender email address](https://app.sendgrid.com/settings/sender_auth) to prove ownership of your email account
 
 ## Provision a Postgres Database
 
-you will need a development data base and a test dabse, you can set this up locally or via a [free railway account](https://railway.app/), if you setup your databse locally you may need to reconfigure the knexfile.js [see docs](https://knexjs.org/guide/migrations.html#basic-configuration)
+You will need a development data base and a test dabse, you can set this up locally or via a [free railway account](https://railway.app/), if you setup your databse locally you may need to reconfigure the knexfile.js [see docs](https://knexjs.org/guide/migrations.html#basic-configuration)
 
 ### Environment variables needed
 

@@ -7,7 +7,6 @@ module.exports = {
   development: {
     client: "pg",
     connection: process.env.DATABASE_URI,
-    ssl: { rejectUnauthorized: false },
     pool: {
       min: 0,
       max: 10,
@@ -22,7 +21,6 @@ module.exports = {
   production: {
     client: "pg",
     connection: process.env.DATABASE_URI,
-    ssl: { rejectUnauthorized: false },
     pool: {
       min: 0,
       max: 10,

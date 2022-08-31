@@ -12,7 +12,7 @@ Run Tests
 
 ## Setup Authorizer For User Authentication
 
-Deploy an instance of Authorizer to Heroku [see docs](https://docs.authorizer.dev/deployment/heroku#create-instance) after deploying visit the to retreive your `AUTH_URL` and `AUTH_CLIENT_ID` for your environment variables
+Deploy an instance of Authorizer to Heroku [see docs](https://docs.authorizer.dev/deployment/heroku#create-instance) after deploying visit the app to retreive your `AUTH_URL` and `AUTH_CLIENT_ID` for your environment variables
 
 ## Setup Sendgrid
 

@@ -2,6 +2,8 @@
 
 ## Getting started
 
+Install Dependencies `npm install`
+
 Start Dev Server `npm run dev`
 
 Run Tests `npm run test`

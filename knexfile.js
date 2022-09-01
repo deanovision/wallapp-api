@@ -5,11 +5,10 @@ require("dotenv").config();
  */
 module.exports = {
   development: {
-    client: "pg",
-    connection: process.env.DATABASE_URI,
-    pool: {
-      min: 0,
-      max: 10,
+    client: "sqlite3",
+    useNullAsDefault: true,
+    connection: {
+      filename: "./server/database/wallapdb.db3",
     },
     migrations: {
       directory: "./server/database/migrations",
@@ -17,6 +16,11 @@ module.exports = {
     seeds: {
       directory: "./server/database/seeds",
     },
+    // pool: {
+    //   afterCreate: (connection, done) => {
+    //     connection.run("PRAGMA foreign_keys = ON", done);
+    //   },
+    // },
   },
   production: {
     client: "pg",
@@ -33,11 +37,10 @@ module.exports = {
     },
   },
   test: {
-    client: "pg",
-    connection: process.env.TEST_DATABASE_URI,
-    pool: {
-      min: 0,
-      max: 10,
+    client: "sqlite3",
+    useNullAsDefault: true,
+    connection: {
+      filename: "./server/database/testdb.db3",
     },
     migrations: {
       directory: "./server/database/migrations",
@@ -45,5 +48,10 @@ module.exports = {
     seeds: {
       directory: "./server/database/seeds",
     },
+    // pool: {
+    //   afterCreate: (connection, done) => {
+    //     connection.run("PRAGMA foreign_keys = ON", done);
+    //   },
+    // },
   },
 };

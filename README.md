@@ -2,36 +2,30 @@
 
 ## Getting started
 
-Start Dev Server
+Start Dev Server `npm run dev`
 
-`npm run dev`
-
-Run Tests
-
-`npm run test`
+Run Tests `npm run test`
 
 ## Setup Authorizer For User Authentication
 
-Deploy an instance of Authorizer to Heroku [see docs](https://docs.authorizer.dev/deployment/heroku#create-instance) after deploying visit the app to retreive your `AUTH_URL` and `AUTH_CLIENT_ID` for your environment variables
+Deploy an instance of Authorizer to Heroku [see docs](https://docs.authorizer.dev/deployment/heroku#create-instance) after deploying visit the app to retreive your `AUTH_CLIENT_ID` for your environment variables, use the url of your Heroku app as your `AUTH_URL`.
 
-## Setup Sendgrid
+## Get App Password From Google
 
-First you will need to [create a free account](https://signup.sendgrid.com/)
-if you do not already have one. Next you will [create an api key](https://app.sendgrid.com/guide/integrate/langs/nodejs)
-after creating an api key you must [verify sender email address](https://app.sendgrid.com/settings/sender_auth) to prove ownership of your email account
+This app uses nodemailer to send emails via gmail SMTP. You will need a gmail account with 2-step verification enabled and an app password enabled. [Check out the docs](https://support.google.com/accounts/answer/185833?hl=en) for info on how to do this if neccessary.
+if you do not already have one.
 
-## Provision a Postgres Database
+## Migrate and Seed Database
 
-You will need a development data base and a test dabse, you can set this up locally or via a [free railway account](https://railway.app/), if you setup your databse locally you may need to reconfigure the knexfile.js [see docs](https://knexjs.org/guide/migrations.html#basic-configuration)
+run `npx knex migrate:latest` to initiate your migration <br>
+run `npx knex seed:run` to seed your database
 
-### Environment variables needed
+## Environment variables needed
 
 ```
 AUTH_URL
 AUTH_CLIENT_ID
 SITE_URL //localhost:3000
-SENDGRID_API_KEY
-VERIFIED_SENDER_EMAIL
-DATABASE_URI
-TEST_DATABASE_URI=
+APP_PASSWORD //gmail app password
+APP_EMAIL //gmail address
 ```

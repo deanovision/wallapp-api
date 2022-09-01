@@ -7,6 +7,7 @@ const posts = [];
 for (let i = 0; i < 50; i++) {
   posts.push({
     message: faker.lorem.paragraph(),
+    user_name: faker.internet.userName(),
   });
 }
 exports.seed = async function (knex) {

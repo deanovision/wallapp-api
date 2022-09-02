@@ -2,6 +2,8 @@
 
 ## Getting started
 
+API hosted [here](https://wallapp-api-production.up.railway.app/) via railway
+
 Install Dependencies `npm install`
 
 Start Dev Server `npm run dev`

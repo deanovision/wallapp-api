@@ -21,9 +21,10 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "jest --watch --verbose --coverage --detectOpenHandles"
+    "test": "jest --watchAll --verbose --detectOpenHandles --expand"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverage": true
   }
 }

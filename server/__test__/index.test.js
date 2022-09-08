@@ -20,6 +20,8 @@ beforeAll(async () => {
   });
   //sign user in to receive access token then assign
   //user details to user variable
+  //*Note user with the following credentials must exist
+  //or change login info to match your own test user credentials
   user = await authRef.login({
     email: "foo@bar.com",
     password: "test123",
